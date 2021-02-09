@@ -37,6 +37,7 @@ public abstract class TowerModelAbstract {
 
     //Interface
     public abstract TextureRegion getPillarTexture();
+    public abstract TextureRegion getBuildMenu();
     public int getXPositionPillar(){ return  x_position; }
     public int getYPositionPillar(){ return  y_position; }
     public void update(float delta){

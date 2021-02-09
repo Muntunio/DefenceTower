@@ -28,8 +28,8 @@ public class MapView extends AbstractScreen {
 //        a = new BulletView();
 //        stage.addActor(a);
 //
-//        b = new TowerView2();
-//        stage.addActor(b);
+        b = new TowerView2();
+        stage.addActor(b);
 //
 //        c = new TestingActor();
 //        stage.addActor(c);

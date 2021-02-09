@@ -26,5 +26,11 @@ public class DirtTowerModel extends TowerModelAbstract{
     @Override
     protected void setModel() { movable_model = new DirtMovablePartModel(); }
 
+    @Override
+    public TextureRegion getBuildMenu(){
+        return TowerTexturesCache.getTowerTextures(TowerTexturesType.DIRT)
+                .getBuildMenu(level);
+    }
+
 
 }

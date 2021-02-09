@@ -27,4 +27,10 @@ public class StoneTowerModel extends TowerModelAbstract{
         return TowerTexturesCache.getTowerTextures(TowerTexturesType.STONE)
                 .getPillar(level);
     }
+
+    @Override
+    public TextureRegion getBuildMenu() {
+        return TowerTexturesCache.getTowerTextures(TowerTexturesType.STONE)
+                .getBuildMenu(level);
+    }
 }

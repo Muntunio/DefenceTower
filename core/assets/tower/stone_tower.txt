@@ -1,75 +1,96 @@
 stone_tower.png
-size: 102, 333
+size: 250, 540
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 back_1
   rotate: false
-  xy: 1, 1
+  xy: 0, 0
   size: 42, 62
   orig: 42, 62
   offset: 0, 0
   index: 1
 back_2
   rotate: false
-  xy: 1, 1
+  xy: 42, 0
   size: 42, 62
   orig: 42, 62
   offset: 0, 0
   index: 2
 back_3
   rotate: false
-  xy: 45, 1
+  xy: 84, 0
   size: 42, 62
   orig: 42, 62
   offset: 0, 0
   index: 3
 bullet
   rotate: false
-  xy: 1, 65
+  xy: 126, 0
   size: 40, 38
   orig: 40, 38
   offset: 0, 0
   index: -1
 front_1
   rotate: false
-  xy: 1, 1
+  xy: 166, 0
   size: 42, 62
   orig: 42, 62
   offset: 0, 0
   index: 1
 front_2
   rotate: false
-  xy: 1, 1
+  xy: 208, 0
   size: 42, 62
   orig: 42, 62
   offset: 0, 0
   index: 2
 front_3
   rotate: false
-  xy: 45, 1
+  xy: 0, 62
   size: 42, 62
   orig: 42, 62
   offset: 0, 0
   index: 3
 pillar_1
   rotate: false
-  xy: 1, 105
+  xy: 42, 62
   size: 100, 71
   orig: 100, 71
   offset: 0, 0
   index: 1
 pillar_2
   rotate: false
-  xy: 1, 178
+  xy: 142, 62
   size: 100, 76
   orig: 100, 76
   offset: 0, 0
   index: 2
 pillar_3
   rotate: false
-  xy: 1, 256
+  xy: 0, 138
   size: 100, 76
   orig: 100, 76
+  offset: 0, 0
+  index: 3
+upgrade_1
+  rotate: false
+  xy: 100, 138
+  size: 150, 134
+  orig: 150, 134
+  offset: 0, 0
+  index: 1
+upgrade_2
+  rotate: false
+  xy: 0, 272
+  size: 150, 134
+  orig: 150, 134
+  offset: 0, 0
+  index: 2
+upgrade_3
+  rotate: false
+  xy: 0, 406
+  size: 150, 134
+  orig: 150, 134
   offset: 0, 0
   index: 3

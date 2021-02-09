@@ -8,6 +8,7 @@ public abstract class TowerTextures {
     private TextureRegion [] front;
     private TextureRegion [] back;
     private TextureRegion bullet;
+    private TextureRegion [] build;
 
     public TowerTextures() {
         pillar = new TextureRegion[3];
@@ -26,6 +27,7 @@ public abstract class TowerTextures {
             pillar[i-1] = atlas.findRegion("pillar_"+i);
             front[i-1] = atlas.findRegion("front_"+i);
             back[i-1] = atlas.findRegion("back_"+i);
+            build[i-1] = atlas.findRegion("upgrade_"+i);
         }
         bullet = atlas.findRegion("bullet");
     }
@@ -35,6 +37,8 @@ public abstract class TowerTextures {
     public TextureRegion getFront(int level) { return front[level]; }
 
     public TextureRegion getBack(int level) { return back[level]; }
+
+    public TextureRegion getBuildMenu(int level) { return back[level]; }
 
     public TextureRegion getBullet() { return bullet; }
 

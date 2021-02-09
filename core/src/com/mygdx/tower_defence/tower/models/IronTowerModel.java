@@ -24,6 +24,13 @@ public class IronTowerModel extends TowerModelAbstract {
     @Override
     public TextureRegion getPillarTexture(){
         return TowerTexturesCache.getTowerTextures(TowerTexturesType.IRON)
-                .getPillar(level); }
+                .getPillar(level);
+    }
+
+    @Override
+    public TextureRegion getBuildMenu() {
+        return TowerTexturesCache.getTowerTextures(TowerTexturesType.IRON)
+                .getBuildMenu(level);
+    }
 
 }

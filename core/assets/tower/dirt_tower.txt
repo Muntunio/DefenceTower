@@ -1,5 +1,5 @@
 dirt_tower.png
-size: 108, 418
+size: 250, 555
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
@@ -12,64 +12,85 @@ back_1
   index: 1
 back_2
   rotate: false
-  xy: 0, 0
+  xy: 80, 0
   size: 80, 17
   orig: 80, 17
   offset: 0, 0
   index: 2
 back_3
   rotate: false
-  xy: 0, 17
+  xy: 160, 0
   size: 80, 17
   orig: 80, 17
   offset: 0, 0
   index: 3
 bullet
   rotate: false
-  xy: 80, 56
+  xy: 0, 39
   size: 28, 26
   orig: 28, 26
   offset: 0, 0
   index: -1
 front_1
   rotate: false
-  xy: 0, 34
+  xy: 0, 17
   size: 80, 22
   orig: 80, 22
   offset: 0, 0
   index: 1
 front_2
   rotate: false
-  xy: 0, 34
+  xy: 80, 17
   size: 80, 22
   orig: 80, 22
   offset: 0, 0
   index: 2
 front_3
   rotate: false
-  xy: 0, 56
+  xy: 160, 17
   size: 80, 22
   orig: 80, 22
   offset: 0, 0
   index: 3
 pillar_1
   rotate: false
-  xy: 0, 82
+  xy: 28, 39
   size: 100, 108
   orig: 100, 108
   offset: 0, 0
   index: 1
 pillar_2
   rotate: false
-  xy: 0, 190
+  xy: 128, 39
   size: 100, 114
   orig: 100, 114
   offset: 0, 0
   index: 2
 pillar_3
   rotate: false
-  xy: 0, 304
+  xy: 0, 153
   size: 100, 114
   orig: 100, 114
+  offset: 0, 0
+  index: 3
+upgrade_1
+  rotate: false
+  xy: 100, 153
+  size: 150, 134
+  orig: 150, 134
+  offset: 0, 0
+  index: 1
+upgrade_2
+  rotate: false
+  xy: 0, 287
+  size: 150, 134
+  orig: 150, 134
+  offset: 0, 0
+  index: 2
+upgrade_3
+  rotate: false
+  xy: 0, 421
+  size: 150, 134
+  orig: 150, 134
   offset: 0, 0
   index: 3

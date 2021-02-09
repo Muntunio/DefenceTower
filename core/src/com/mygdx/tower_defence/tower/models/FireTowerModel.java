@@ -26,4 +26,10 @@ public class FireTowerModel extends TowerModelAbstract {
         return TowerTexturesCache.getTowerTextures(TowerTexturesType.FIRE)
                 .getPillar(level);
     }
+
+    @Override
+    public TextureRegion getBuildMenu() {
+        return TowerTexturesCache.getTowerTextures(TowerTexturesType.FIRE)
+                .getBuildMenu(level);
+    }
 }

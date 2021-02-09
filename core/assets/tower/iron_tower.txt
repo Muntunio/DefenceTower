@@ -1,5 +1,5 @@
 iron_tower.png
-size: 123, 512
+size: 450, 282
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
@@ -12,64 +12,85 @@ back_1
   index: 1
 back_2
   rotate: false
-  xy: 0, 22
+  xy: 264, 0
   size: 88, 25
   orig: 88, 25
   offset: 0, 0
   index: 2
 back_3
   rotate: false
-  xy: 0, 47
-  size: 83, 24
+  xy: 88, 0
+  size: 88, 24
   orig: 88, 24
-  offset: 3, 0
+  offset: 0, 0
   index: 3
 bullet
   rotate: false
-  xy: 83, 47
+  xy: 0, 28
   size: 40, 32
   orig: 40, 32
   offset: 0, 0
   index: -1
 front_1
   rotate: false
-  xy: 0, 79
+  xy: 176, 0
   size: 88, 24
   orig: 88, 24
   offset: 0, 0
   index: 1
 front_2
   rotate: false
-  xy: 0, 103
+  xy: 352, 0
   size: 88, 28
   orig: 88, 28
   offset: 0, 0
   index: 2
 front_3
   rotate: false
-  xy: 0, 131
-  size: 85, 32
+  xy: 40, 28
+  size: 88, 32
   orig: 88, 32
-  offset: 2, 0
+  offset: 0, 0
   index: 3
 pillar_1
   rotate: false
-  xy: 0, 163
+  xy: 128, 28
   size: 100, 114
   orig: 100, 114
   offset: 0, 0
   index: 1
 pillar_2
   rotate: false
-  xy: 0, 277
+  xy: 228, 28
   size: 100, 115
   orig: 100, 115
   offset: 0, 0
   index: 2
 pillar_3
   rotate: false
-  xy: 0, 392
+  xy: 328, 28
   size: 100, 120
   orig: 100, 120
+  offset: 0, 0
+  index: 3
+upgrade_1
+  rotate: false
+  xy: 0, 148
+  size: 150, 134
+  orig: 150, 134
+  offset: 0, 0
+  index: 1
+upgrade_2
+  rotate: false
+  xy: 150, 148
+  size: 150, 134
+  orig: 150, 134
+  offset: 0, 0
+  index: 2
+upgrade_3
+  rotate: false
+  xy: 300, 148
+  size: 150, 134
+  orig: 150, 134
   offset: 0, 0
   index: 3

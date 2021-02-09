@@ -1,5 +1,5 @@
 fire_tower.png
-size: 102, 474
+size: 450, 284
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
@@ -12,64 +12,85 @@ back_1
   index: 1
 back_2
   rotate: false
-  xy: 0, 0
+  xy: 82, 0
   size: 82, 22
   orig: 82, 22
   offset: 0, 0
   index: 2
 back_3
   rotate: false
-  xy: 0, 22
+  xy: 164, 0
   size: 82, 22
   orig: 82, 22
   offset: 0, 0
   index: 3
 bullet
   rotate: false
-  xy: 82, 22
+  xy: 94, 35
   size: 20, 46
   orig: 20, 46
   offset: 0, 0
   index: -1
 front_1
   rotate: false
-  xy: 0, 68
+  xy: 246, 0
   size: 94, 35
   orig: 94, 35
   offset: 0, 0
   index: 1
 front_2
   rotate: false
-  xy: 0, 68
+  xy: 340, 0
   size: 94, 35
   orig: 94, 35
   offset: 0, 0
   index: 2
 front_3
   rotate: false
-  xy: 0, 103
+  xy: 0, 35
   size: 94, 35
   orig: 94, 35
   offset: 0, 0
   index: 3
 pillar_1
   rotate: false
-  xy: 0, 138
+  xy: 114, 35
   size: 100, 106
   orig: 100, 106
   offset: 0, 0
   index: 1
 pillar_2
   rotate: false
-  xy: 0, 244
+  xy: 214, 35
   size: 100, 115
   orig: 100, 115
   offset: 0, 0
   index: 2
 pillar_3
   rotate: false
-  xy: 0, 359
+  xy: 314, 35
   size: 100, 115
   orig: 100, 115
+  offset: 0, 0
+  index: 3
+upgrade_1
+  rotate: false
+  xy: 0, 150
+  size: 150, 134
+  orig: 150, 134
+  offset: 0, 0
+  index: 1
+upgrade_2
+  rotate: false
+  xy: 150, 150
+  size: 150, 134
+  orig: 150, 134
+  offset: 0, 0
+  index: 2
+upgrade_3
+  rotate: false
+  xy: 300, 150
+  size: 150, 134
+  orig: 150, 134
   offset: 0, 0
   index: 3
