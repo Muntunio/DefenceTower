@@ -89,21 +89,21 @@ public class MapModel {
         build_controller = new AbstractTowerController[map_settings.getTowerPivot().length];
 
         for(int i=0; i<map_settings.getTowerPivot().length; ++i) {
-            build_controller[i] = new BuildController();
+            build_controller[i] = new BuildController(this);
             build_controller[i].setPivot(map_settings.getTowerPivot()[i].x,
                     map_settings.getTowerPivot()[i].y);
         }
 
-        build_controller[1] = new TowerController2(TowerType.DIRT);
+        build_controller[1] = new TowerController2(this, TowerType.DIRT);
         build_controller[1].setPivot(map_settings.getTowerPivot()[1].x,
                 map_settings.getTowerPivot()[1].y);
-        build_controller[2] = new TowerController2(TowerType.FIRE);
+        build_controller[2] = new TowerController2(this,TowerType.FIRE);
         build_controller[2].setPivot(map_settings.getTowerPivot()[2].x,
                 map_settings.getTowerPivot()[2].y);
-        build_controller[3] = new TowerController2(TowerType.STONE);
+        build_controller[3] = new TowerController2(this,TowerType.STONE);
         build_controller[3].setPivot(map_settings.getTowerPivot()[3].x,
                 map_settings.getTowerPivot()[3].y);
-        build_controller[4] = new TowerController2(TowerType.IRON);
+        build_controller[4] = new TowerController2(this,TowerType.IRON);
         build_controller[4].setPivot(map_settings.getTowerPivot()[4].x,
                 map_settings.getTowerPivot()[4].y);
     }

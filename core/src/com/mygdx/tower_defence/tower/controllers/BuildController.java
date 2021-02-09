@@ -1,5 +1,6 @@
 package com.mygdx.tower_defence.tower.controllers;
 
+import com.mygdx.tower_defence.map.model.MapModel;
 import com.mygdx.tower_defence.tower.models.BuildModel;
 import com.mygdx.tower_defence.tower.views.BuildView;
 
@@ -7,8 +8,8 @@ public class BuildController extends AbstractTowerController {
     private BuildModel model;
     private BuildView view;
 
-
-    public BuildController() {
+    public BuildController(MapModel map_model) {
+        super(map_model);
         model = new BuildModel();
         view = new BuildView(model);
     }

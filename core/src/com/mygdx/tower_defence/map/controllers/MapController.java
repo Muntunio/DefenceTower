@@ -45,8 +45,6 @@ public class MapController {
             }
         }
 
-
-
         for(int i=0; i<map_model.getTowerPivot().length; ++i){
             if(Math.pow((x - map_model.getTowerPivot()[i].x),2)+Math.pow((y - map_model.getTowerPivot()[i].y),2) < Math.pow(40,2)) {
                 if(map_model.isIsActiveTower())

@@ -1,14 +1,18 @@
 package com.mygdx.tower_defence.tower.controllers;
 
+import com.mygdx.tower_defence.map.model.MapModel;
 import com.mygdx.tower_defence.tower.models.*;
 import com.mygdx.tower_defence.tower.textures.TowerType;
 import com.mygdx.tower_defence.tower.views.TowerView2;
+
+import java.nio.channels.FileChannel;
 
 public class TowerController2 extends AbstractTowerController {
     private TowerModelAbstract model;
     private TowerView2 view;
 
-    public TowerController2(TowerType type) {
+    public TowerController2(MapModel map_model, TowerType type) {
+        super(map_model);
         model = chooseTowerType(type);
         view = new TowerView2(model);
     }
@@ -42,21 +46,21 @@ public class TowerController2 extends AbstractTowerController {
     public void checkMenuTouchDown(float x, float y) {
         if(x>model.getXPositionBuildMenu()+5 && x<model.getXPositionBuildMenu()+50){
             if(y>model.getYPositionBuildMenu()+10 && y<model.getYPositionBuildMenu()+44){
-                System.out.println("Kula");
+                //System.out.println("Kula");
                 return;
             }
             if(y>model.getYPositionBuildMenu()+90 && y<model.getYPositionBuildMenu()+120){
-                System.out.println("Skala");
+                model.destroy();
                 return;
             }
         }
         if(x>model.getXPositionBuildMenu()+100 && x<model.getXPositionBuildMenu()+145){
             if(y>model.getYPositionBuildMenu()+10 && y<model.getYPositionBuildMenu()+44){
-                System.out.println("Ogien");
+                //System.out.println("Ogien");
                 return;
             }
             if(y>model.getYPositionBuildMenu()+90 && y<model.getYPositionBuildMenu()+120){
-                System.out.println("DIRT");
+                model.upgrade();
                 return;
             }
         }
