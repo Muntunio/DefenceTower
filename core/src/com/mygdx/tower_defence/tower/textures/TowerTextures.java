@@ -14,6 +14,7 @@ public abstract class TowerTextures {
         pillar = new TextureRegion[3];
         front = new TextureRegion[3];
         back = new TextureRegion[3];
+        build = new TextureRegion[3];
 
         TextureAtlas atlas = loadAsset();
         pullTextures(atlas);
