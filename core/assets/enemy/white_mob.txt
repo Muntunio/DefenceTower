@@ -1,0 +1,145 @@
+white_mob.png
+size: 1745, 1164
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+3_enemies_1_walk
+  rotate: false
+  xy: 0, 0
+  size: 349, 291
+  orig: 349, 291
+  offset: 0, 0
+  index: 0
+3_enemies_1_walk
+  rotate: false
+  xy: 349, 0
+  size: 349, 291
+  orig: 349, 291
+  offset: 0, 0
+  index: 1
+3_enemies_1_walk
+  rotate: false
+  xy: 698, 0
+  size: 349, 291
+  orig: 349, 291
+  offset: 0, 0
+  index: 2
+3_enemies_1_walk
+  rotate: false
+  xy: 1047, 0
+  size: 349, 291
+  orig: 349, 291
+  offset: 0, 0
+  index: 3
+3_enemies_1_walk
+  rotate: false
+  xy: 1396, 0
+  size: 349, 291
+  orig: 349, 291
+  offset: 0, 0
+  index: 4
+3_enemies_1_walk
+  rotate: false
+  xy: 0, 291
+  size: 349, 291
+  orig: 349, 291
+  offset: 0, 0
+  index: 5
+3_enemies_1_walk
+  rotate: false
+  xy: 349, 291
+  size: 349, 291
+  orig: 349, 291
+  offset: 0, 0
+  index: 6
+3_enemies_1_walk
+  rotate: false
+  xy: 698, 291
+  size: 349, 291
+  orig: 349, 291
+  offset: 0, 0
+  index: 7
+3_enemies_1_walk
+  rotate: false
+  xy: 1047, 291
+  size: 349, 291
+  orig: 349, 291
+  offset: 0, 0
+  index: 8
+3_enemies_1_walk
+  rotate: false
+  xy: 1396, 291
+  size: 349, 291
+  orig: 349, 291
+  offset: 0, 0
+  index: 9
+3_enemies_1_walk
+  rotate: false
+  xy: 0, 582
+  size: 349, 291
+  orig: 349, 291
+  offset: 0, 0
+  index: 10
+3_enemies_1_walk
+  rotate: false
+  xy: 349, 582
+  size: 349, 291
+  orig: 349, 291
+  offset: 0, 0
+  index: 11
+3_enemies_1_walk
+  rotate: false
+  xy: 698, 582
+  size: 349, 291
+  orig: 349, 291
+  offset: 0, 0
+  index: 12
+3_enemies_1_walk
+  rotate: false
+  xy: 1047, 582
+  size: 349, 291
+  orig: 349, 291
+  offset: 0, 0
+  index: 13
+3_enemies_1_walk
+  rotate: false
+  xy: 1396, 582
+  size: 349, 291
+  orig: 349, 291
+  offset: 0, 0
+  index: 14
+3_enemies_1_walk
+  rotate: false
+  xy: 0, 873
+  size: 349, 291
+  orig: 349, 291
+  offset: 0, 0
+  index: 15
+3_enemies_1_walk
+  rotate: false
+  xy: 349, 873
+  size: 349, 291
+  orig: 349, 291
+  offset: 0, 0
+  index: 16
+3_enemies_1_walk
+  rotate: false
+  xy: 698, 873
+  size: 349, 291
+  orig: 349, 291
+  offset: 0, 0
+  index: 17
+3_enemies_1_walk
+  rotate: false
+  xy: 1047, 873
+  size: 349, 291
+  orig: 349, 291
+  offset: 0, 0
+  index: 18
+3_enemies_1_walk
+  rotate: false
+  xy: 1396, 873
+  size: 349, 291
+  orig: 349, 291
+  offset: 0, 0
+  index: 19

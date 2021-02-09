@@ -1,0 +1,40 @@
+dirt.png
+size: 89, 79
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bullet
+  rotate: false
+  xy: 0, 0
+  size: 28, 26
+  orig: 28, 26
+  offset: 0, 0
+  index: -1
+bullet
+  rotate: false
+  xy: 28, 0
+  size: 24, 22
+  orig: 24, 22
+  offset: 0, 0
+  index: -1
+bullet
+  rotate: false
+  xy: 52, 0
+  size: 36, 32
+  orig: 36, 32
+  offset: 0, 0
+  index: -1
+bullet
+  rotate: false
+  xy: 0, 32
+  size: 41, 34
+  orig: 41, 34
+  offset: 0, 0
+  index: -1
+bullet
+  rotate: false
+  xy: 41, 32
+  size: 48, 47
+  orig: 48, 47
+  offset: 0, 0
+  index: -1

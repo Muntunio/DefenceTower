@@ -1,0 +1,75 @@
+stone_tower.png
+size: 102, 333
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+back_1
+  rotate: false
+  xy: 1, 1
+  size: 42, 62
+  orig: 42, 62
+  offset: 0, 0
+  index: 1
+back_2
+  rotate: false
+  xy: 1, 1
+  size: 42, 62
+  orig: 42, 62
+  offset: 0, 0
+  index: 2
+back_3
+  rotate: false
+  xy: 45, 1
+  size: 42, 62
+  orig: 42, 62
+  offset: 0, 0
+  index: 3
+bullet
+  rotate: false
+  xy: 1, 65
+  size: 40, 38
+  orig: 40, 38
+  offset: 0, 0
+  index: -1
+front_1
+  rotate: false
+  xy: 1, 1
+  size: 42, 62
+  orig: 42, 62
+  offset: 0, 0
+  index: 1
+front_2
+  rotate: false
+  xy: 1, 1
+  size: 42, 62
+  orig: 42, 62
+  offset: 0, 0
+  index: 2
+front_3
+  rotate: false
+  xy: 45, 1
+  size: 42, 62
+  orig: 42, 62
+  offset: 0, 0
+  index: 3
+pillar_1
+  rotate: false
+  xy: 1, 105
+  size: 100, 71
+  orig: 100, 71
+  offset: 0, 0
+  index: 1
+pillar_2
+  rotate: false
+  xy: 1, 178
+  size: 100, 76
+  orig: 100, 76
+  offset: 0, 0
+  index: 2
+pillar_3
+  rotate: false
+  xy: 1, 256
+  size: 100, 76
+  orig: 100, 76
+  offset: 0, 0
+  index: 3

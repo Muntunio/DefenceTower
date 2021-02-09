@@ -1,0 +1,40 @@
+iron.png
+size: 106, 115
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bullet
+  rotate: false
+  xy: 52, 83
+  size: 40, 32
+  orig: 40, 32
+  offset: 0, 0
+  index: -1
+bullet
+  rotate: false
+  xy: 58, 45
+  size: 45, 38
+  orig: 45, 38
+  offset: 0, 0
+  index: -1
+bullet
+  rotate: false
+  xy: 58, 0
+  size: 48, 45
+  orig: 48, 45
+  offset: 0, 0
+  index: -1
+bullet
+  rotate: false
+  xy: 0, 63
+  size: 52, 47
+  orig: 52, 47
+  offset: 0, 0
+  index: -1
+bullet
+  rotate: false
+  xy: 0, 0
+  size: 58, 63
+  orig: 58, 63
+  offset: 0, 0
+  index: -1

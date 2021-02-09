@@ -1,0 +1,145 @@
+mesh_mob.png
+size: 1016, 1025
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1_enemies_1_walk
+  rotate: false
+  xy: 0, 0
+  size: 254, 205
+  orig: 254, 205
+  offset: 0, 0
+  index: 0
+1_enemies_1_walk
+  rotate: false
+  xy: 254, 0
+  size: 254, 205
+  orig: 254, 205
+  offset: 0, 0
+  index: 1
+1_enemies_1_walk
+  rotate: false
+  xy: 508, 0
+  size: 254, 205
+  orig: 254, 205
+  offset: 0, 0
+  index: 2
+1_enemies_1_walk
+  rotate: false
+  xy: 762, 0
+  size: 254, 205
+  orig: 254, 205
+  offset: 0, 0
+  index: 3
+1_enemies_1_walk
+  rotate: false
+  xy: 0, 205
+  size: 254, 205
+  orig: 254, 205
+  offset: 0, 0
+  index: 4
+1_enemies_1_walk
+  rotate: false
+  xy: 254, 205
+  size: 254, 205
+  orig: 254, 205
+  offset: 0, 0
+  index: 5
+1_enemies_1_walk
+  rotate: false
+  xy: 508, 205
+  size: 254, 205
+  orig: 254, 205
+  offset: 0, 0
+  index: 6
+1_enemies_1_walk
+  rotate: false
+  xy: 762, 205
+  size: 254, 205
+  orig: 254, 205
+  offset: 0, 0
+  index: 7
+1_enemies_1_walk
+  rotate: false
+  xy: 0, 410
+  size: 254, 205
+  orig: 254, 205
+  offset: 0, 0
+  index: 8
+1_enemies_1_walk
+  rotate: false
+  xy: 254, 410
+  size: 254, 205
+  orig: 254, 205
+  offset: 0, 0
+  index: 9
+1_enemies_1_walk
+  rotate: false
+  xy: 508, 410
+  size: 254, 205
+  orig: 254, 205
+  offset: 0, 0
+  index: 10
+1_enemies_1_walk
+  rotate: false
+  xy: 762, 410
+  size: 254, 205
+  orig: 254, 205
+  offset: 0, 0
+  index: 11
+1_enemies_1_walk
+  rotate: false
+  xy: 0, 615
+  size: 254, 205
+  orig: 254, 205
+  offset: 0, 0
+  index: 12
+1_enemies_1_walk
+  rotate: false
+  xy: 254, 615
+  size: 254, 205
+  orig: 254, 205
+  offset: 0, 0
+  index: 13
+1_enemies_1_walk
+  rotate: false
+  xy: 508, 615
+  size: 254, 205
+  orig: 254, 205
+  offset: 0, 0
+  index: 14
+1_enemies_1_walk
+  rotate: false
+  xy: 762, 615
+  size: 254, 205
+  orig: 254, 205
+  offset: 0, 0
+  index: 15
+1_enemies_1_walk
+  rotate: false
+  xy: 0, 820
+  size: 254, 205
+  orig: 254, 205
+  offset: 0, 0
+  index: 16
+1_enemies_1_walk
+  rotate: false
+  xy: 254, 820
+  size: 254, 205
+  orig: 254, 205
+  offset: 0, 0
+  index: 17
+1_enemies_1_walk
+  rotate: false
+  xy: 508, 820
+  size: 254, 205
+  orig: 254, 205
+  offset: 0, 0
+  index: 18
+1_enemies_1_walk
+  rotate: false
+  xy: 762, 820
+  size: 254, 205
+  orig: 254, 205
+  offset: 0, 0
+  index: 19
