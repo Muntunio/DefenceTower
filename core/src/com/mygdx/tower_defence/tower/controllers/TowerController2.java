@@ -5,8 +5,6 @@ import com.mygdx.tower_defence.tower.models.*;
 import com.mygdx.tower_defence.tower.textures.TowerType;
 import com.mygdx.tower_defence.tower.views.TowerView2;
 
-import java.nio.channels.FileChannel;
-
 public class TowerController2 extends AbstractTowerController {
     private TowerModelAbstract model;
     private TowerView2 view;
@@ -50,7 +48,11 @@ public class TowerController2 extends AbstractTowerController {
                 return;
             }
             if(y>model.getYPositionBuildMenu()+90 && y<model.getYPositionBuildMenu()+120){
+                if( model.getLevel() == 0 ) {
+                    deleteTower();
+                }
                 model.destroy();
+
                 return;
             }
         }
@@ -61,8 +63,12 @@ public class TowerController2 extends AbstractTowerController {
             }
             if(y>model.getYPositionBuildMenu()+90 && y<model.getYPositionBuildMenu()+120){
                 model.upgrade();
-                return;
             }
         }
+    }
+
+    private void deleteTower() {
+        model.setToRemove(true);
+        map_model.addNewTower( new BuildController(map_model) );
     }
 }

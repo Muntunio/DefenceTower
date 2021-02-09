@@ -41,14 +41,13 @@ public class BuildController extends AbstractTowerController {
             }
             if(y>model.getYPosition()+90 && y<model.getYPosition()+130){
                 createTower(TowerType.DIRT);
-                return;
             }
         }
     }
 
     private void createTower(TowerType type) {
         model.setToRemove(true);
-        map_model.addNewTower(type);
+        map_model.addNewTower( new TowerController2(map_model, type) );
     }
 
     @Override

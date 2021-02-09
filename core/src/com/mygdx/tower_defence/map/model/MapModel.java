@@ -152,9 +152,9 @@ public class MapModel {
         thread_add_enemy.start();
     }
 
-    public void addNewTower(TowerType type){
-        build_controller[number_of_active_controller] =
-                new TowerController2(this, type);
+    public void addNewTower(AbstractTowerController towerController){
+        build_controller[number_of_active_controller] = towerController;
+
 
         build_controller[number_of_active_controller]
                 .setPivot(map_settings.getTowerPivot()[number_of_active_controller].x,
@@ -162,6 +162,8 @@ public class MapModel {
 
         is_tower_to_add = true;
     }
+
+
 
 
     //Getters and Setters

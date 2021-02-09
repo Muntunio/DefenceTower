@@ -16,8 +16,10 @@ public abstract class TowerModelAbstract {
 
     private boolean is_active_build_menu;
 
+    private boolean to_remove;
+
     public TowerModelAbstract() {
-        is_active_build_menu = false; //TODO Change this
+        is_active_build_menu = false;
         setModel();
         level = 0;
         movable_model.setLevel(level);
@@ -80,6 +82,9 @@ public abstract class TowerModelAbstract {
     public void setActiveMenu(boolean activeMenu) { is_active_build_menu = activeMenu; }
 
     public abstract TowerType getType();
+
+    public void setToRemove(boolean to_remove) { this.to_remove = to_remove; }
+    public boolean isToRemove() { return to_remove; }
 
     //Interface to movable
     public TextureRegion getBulletTexture(){ return movable_model.getBulletTexture(); }

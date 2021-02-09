@@ -38,6 +38,9 @@ public class TowerView2 extends Actor {
     public void act(float delta) {
         super.act(delta);
         model.update(delta);
+
+        if(model.isToRemove())
+            this.remove();
     }
 
 

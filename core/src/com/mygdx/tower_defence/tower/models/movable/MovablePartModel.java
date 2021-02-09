@@ -26,12 +26,20 @@ public abstract class MovablePartModel {
     protected int x_position_bullet;
     protected int y_position_bullet;
 
+    protected float delay;
+    private float last_state;
+    private boolean is_waiting;
+
+
 
     public MovablePartModel() {
         this.x_position = 0;
         this.y_position = 0;
         setDefault();
         recalculatePosition();
+        delay = 3.0f;
+        last_state = 0.0f;
+        is_waiting = false;
     }
 
     public MovablePartModel(int x_position, int y_position) {
@@ -39,6 +47,9 @@ public abstract class MovablePartModel {
         this.y_position = y_position;
         setDefault();
         recalculatePosition();
+        delay = 3.0f;
+        last_state = 0.0f;
+        is_waiting = false;
     }
 
     private void setDefault() {
@@ -55,9 +66,16 @@ public abstract class MovablePartModel {
 
     public void update(float delta) {
         state_time += delta;
-        move();
+        if(!is_waiting)
+            move();
+        else
+            waiting();
     }
 
+    protected void waiting(){
+        if(state_time-last_state > delay)
+            is_waiting =false;
+    }
 
     private void move() {
         if( directionUp ){
@@ -70,9 +88,12 @@ public abstract class MovablePartModel {
             moveDown();
             if(y_position_back < y_position){
                 directionUp = true;
+                is_waiting = true;
+                last_state = state_time;
             }
         }
     }
+
 
     private void moveUp() {
         y_position_back+=speed;

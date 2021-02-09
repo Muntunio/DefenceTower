@@ -4,5 +4,6 @@ public enum TowerType {
     FIRE,
     DIRT,
     STONE,
-    IRON
+    IRON,
+    BUILD
 }
