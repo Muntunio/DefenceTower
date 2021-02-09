@@ -2,6 +2,7 @@ package com.mygdx.tower_defence.tower.controllers;
 
 import com.mygdx.tower_defence.map.model.MapModel;
 import com.mygdx.tower_defence.tower.models.BuildModel;
+import com.mygdx.tower_defence.tower.textures.TowerType;
 import com.mygdx.tower_defence.tower.views.BuildView;
 
 public class BuildController extends AbstractTowerController {
@@ -25,24 +26,29 @@ public class BuildController extends AbstractTowerController {
     public void checkMenuTouchDown(float x, float y) {
         if(x>model.getXPosition()+5 && x<model.getXPosition()+50){
             if(y>model.getYPosition()+10 && y<model.getYPosition()+44){
-                System.out.println("Kula");
+                createTower(TowerType.IRON);
                 return;
             }
-            if(y>model.getYPosition()+90 && y<model.getYPosition()+120){
-                System.out.println("Skala");
+            if(y>model.getYPosition()+90 && y<model.getYPosition()+130){
+                createTower(TowerType.STONE);
                 return;
             }
         }
         if(x>model.getXPosition()+100 && x<model.getXPosition()+145){
             if(y>model.getYPosition()+10 && y<model.getYPosition()+44){
-                System.out.println("Ogien");
+                createTower(TowerType.FIRE);
                 return;
             }
-            if(y>model.getYPosition()+90 && y<model.getYPosition()+120){
-                System.out.println("DIRT");
+            if(y>model.getYPosition()+90 && y<model.getYPosition()+130){
+                createTower(TowerType.DIRT);
                 return;
             }
         }
+    }
+
+    private void createTower(TowerType type) {
+        model.setToRemove(true);
+        map_model.addNewTower(type);
     }
 
     @Override

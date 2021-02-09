@@ -2,6 +2,7 @@ package com.mygdx.tower_defence.tower.models;
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.mygdx.tower_defence.tower.models.movable.MovablePartModel;
+import com.mygdx.tower_defence.tower.textures.TowerType;
 
 public abstract class TowerModelAbstract {
     protected MovablePartModel movable_model;
@@ -77,6 +78,8 @@ public abstract class TowerModelAbstract {
 
     public boolean isActiveMenu() { return is_active_build_menu; }
     public void setActiveMenu(boolean activeMenu) { is_active_build_menu = activeMenu; }
+
+    public abstract TowerType getType();
 
     //Interface to movable
     public TextureRegion getBulletTexture(){ return movable_model.getBulletTexture(); }

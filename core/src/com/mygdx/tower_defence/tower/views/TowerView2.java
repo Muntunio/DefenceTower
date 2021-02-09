@@ -3,6 +3,7 @@ package com.mygdx.tower_defence.tower.views;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.mygdx.tower_defence.tower.models.*;
+import com.mygdx.tower_defence.tower.textures.TowerType;
 
 public class TowerView2 extends Actor {
     TowerModelAbstract model;
@@ -17,8 +18,15 @@ public class TowerView2 extends Actor {
         super.draw(batch, parentAlpha);
 
         batch.draw(model.getBackTexture(), model.getXPositionBack(), model.getYPositionBack());
-        batch.draw(model.getPillarTexture(), model.getXPositionPillar(), model.getYPositionPillar());
-        batch.draw(model.getFrontTexture(), model.getXPositionFront(), model.getYPositionFront());
+
+        if(model.getType() != TowerType.STONE) {
+            batch.draw(model.getPillarTexture(), model.getXPositionPillar(), model.getYPositionPillar());
+            batch.draw(model.getFrontTexture(), model.getXPositionFront(), model.getYPositionFront());
+        }else{
+            batch.draw(model.getFrontTexture(), model.getXPositionFront(), model.getYPositionFront());
+            batch.draw(model.getPillarTexture(), model.getXPositionPillar(), model.getYPositionPillar());
+        }
+
         if( model.isBullet() )
             batch.draw(model.getBulletTexture(), model.getXPositionBullet(), model.getYPositionBullet());
 

@@ -32,4 +32,9 @@ public class IronTowerModel extends TowerModelAbstract {
                 .getBuildMenu(level);
     }
 
+    @Override
+    public TowerType getType() {
+        return TowerType.IRON;
+    }
+
 }

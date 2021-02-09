@@ -8,12 +8,19 @@ public class StoneMovablePartModel extends MovablePartModel {
 
     public StoneMovablePartModel() {
         super();
-        moving_distance = 100;
+        moving_distance = 30;
     }
 
     public StoneMovablePartModel(int x_position, int y_position) {
         super(x_position, y_position);
-        moving_distance = 100;
+        moving_distance = 30;
+    }
+
+
+    public void setPosition(int x, int y){
+        this.x_position = x;
+        this.y_position = y+30;
+        recalculatePosition();
     }
 
     @Override
@@ -21,7 +28,7 @@ public class StoneMovablePartModel extends MovablePartModel {
         x_position_front = x_position;
         y_position_front = y_position;
 
-        x_position_back = x_position+50;
+        x_position_back = x_position+46;
         y_position_back = y_position;
 
         recalculateBulletPosition();

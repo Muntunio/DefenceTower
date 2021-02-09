@@ -18,9 +18,11 @@ public class BuildModel {
     private int x_position;
     private int y_position;
     private boolean is_active_build_menu;
+    private boolean to_remove;
 
     public BuildModel() {
         is_active_build_menu = false;
+        to_remove = false;
     }
 
     public void setPivot(int x, int y){
@@ -41,4 +43,8 @@ public class BuildModel {
     public void setIsActiveBuildMenu(boolean is_active_build_menu) {
         this.is_active_build_menu = is_active_build_menu;
     }
+
+    public void setToRemove(boolean to_remove) { this.to_remove = to_remove; }
+
+    public boolean isToRemove() { return to_remove; }
 }

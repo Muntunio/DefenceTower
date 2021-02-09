@@ -32,5 +32,10 @@ public class DirtTowerModel extends TowerModelAbstract{
                 .getBuildMenu(level);
     }
 
+    @Override
+    public TowerType getType() {
+        return TowerType.DIRT;
+    }
+
 
 }

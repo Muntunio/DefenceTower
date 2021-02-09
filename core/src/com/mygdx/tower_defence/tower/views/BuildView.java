@@ -21,6 +21,10 @@ public class BuildView extends Actor {
 
     @Override
     public void act(float delta) {
+
         super.act(delta);
+
+        if(model.isToRemove())
+            this.remove();
     }
 }
