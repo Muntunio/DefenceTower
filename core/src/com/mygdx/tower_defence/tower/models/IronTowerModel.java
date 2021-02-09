@@ -1,10 +1,9 @@
 package com.mygdx.tower_defence.tower.models;
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.mygdx.tower_defence.tower.models.movable.DirtMovablePartModel;
 import com.mygdx.tower_defence.tower.models.movable.IronMovablePartModel;
 import com.mygdx.tower_defence.tower.textures.TowerTexturesCache;
-import com.mygdx.tower_defence.tower.textures.TowerTexturesType;
+import com.mygdx.tower_defence.tower.textures.TowerType;
 
 public class IronTowerModel extends TowerModelAbstract {
 
@@ -23,13 +22,13 @@ public class IronTowerModel extends TowerModelAbstract {
 
     @Override
     public TextureRegion getPillarTexture(){
-        return TowerTexturesCache.getTowerTextures(TowerTexturesType.IRON)
+        return TowerTexturesCache.getTowerTextures(TowerType.IRON)
                 .getPillar(level);
     }
 
     @Override
     public TextureRegion getBuildMenu() {
-        return TowerTexturesCache.getTowerTextures(TowerTexturesType.IRON)
+        return TowerTexturesCache.getTowerTextures(TowerType.IRON)
                 .getBuildMenu(level);
     }
 

@@ -3,7 +3,7 @@ package com.mygdx.tower_defence.tower.models;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.mygdx.tower_defence.tower.models.movable.StoneMovablePartModel;
 import com.mygdx.tower_defence.tower.textures.TowerTexturesCache;
-import com.mygdx.tower_defence.tower.textures.TowerTexturesType;
+import com.mygdx.tower_defence.tower.textures.TowerType;
 
 public class StoneTowerModel extends TowerModelAbstract{
 
@@ -24,13 +24,13 @@ public class StoneTowerModel extends TowerModelAbstract{
 
     @Override
     public TextureRegion getPillarTexture() {
-        return TowerTexturesCache.getTowerTextures(TowerTexturesType.STONE)
+        return TowerTexturesCache.getTowerTextures(TowerType.STONE)
                 .getPillar(level);
     }
 
     @Override
     public TextureRegion getBuildMenu() {
-        return TowerTexturesCache.getTowerTextures(TowerTexturesType.STONE)
+        return TowerTexturesCache.getTowerTextures(TowerType.STONE)
                 .getBuildMenu(level);
     }
 }

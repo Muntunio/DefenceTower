@@ -7,8 +7,8 @@ import com.mygdx.tower_defence.tower.models.*;
 public class TowerView2 extends Actor {
     TowerModelAbstract model;
 
-    public TowerView2() {
-        model = new FireTowerModel();
+    public TowerView2(TowerModelAbstract model) {
+        this.model = model;
     }
 
 
@@ -21,6 +21,9 @@ public class TowerView2 extends Actor {
         batch.draw(model.getFrontTexture(), model.getXPositionFront(), model.getYPositionFront());
         if( model.isBullet() )
             batch.draw(model.getBulletTexture(), model.getXPositionBullet(), model.getYPositionBullet());
+
+        if( model.isActiveMenu() )
+            batch.draw(model.getBuildMenu(), model.getXPositionBuildMenu(), model.getYPositionBuildMenu());
     }
 
     @Override

@@ -8,10 +8,17 @@ public abstract class TowerModelAbstract {
     protected int level;
     private int x_position;
     private int y_position;
+    private int x_pivot;
+    private int y_pivot;
+    private int x_position_build_menu;
+    private int y_position_build_menu;
+
+    private boolean is_active_build_menu;
 
     public TowerModelAbstract() {
+        is_active_build_menu = false; //TODO Change this
         setModel();
-        level = 2;
+        level = 0;
         movable_model.setLevel(level);
     }
 
@@ -21,6 +28,27 @@ public abstract class TowerModelAbstract {
         x_position = x;
         y_position = y;
         movable_model.setPosition(x_position,y_position);
+
+        x_pivot = x + getPillarTexture().getRegionWidth()/2;
+        y_pivot = y + 40;
+
+        calculatePositionBuildMenu();
+    }
+
+    public void setPivot(int x, int y){
+        x_pivot = x;
+        y_pivot = y;
+
+        x_position = x - getPillarTexture().getRegionWidth()/2 + 5;
+        y_position = y - 25;
+        movable_model.setPosition(x_position,y_position);
+
+        calculatePositionBuildMenu();
+    }
+
+    private void calculatePositionBuildMenu(){
+        x_position_build_menu = x_pivot - getBuildMenu().getRegionWidth()/2;
+        y_position_build_menu = y_pivot - getBuildMenu().getRegionHeight()/2;
     }
 
     public void upgrade(){
@@ -40,10 +68,15 @@ public abstract class TowerModelAbstract {
     public abstract TextureRegion getBuildMenu();
     public int getXPositionPillar(){ return  x_position; }
     public int getYPositionPillar(){ return  y_position; }
+    public int getXPositionBuildMenu() { return x_position_build_menu; }
+    public int getYPositionBuildMenu() { return y_position_build_menu; }
     public void update(float delta){
         movable_model.update(delta);
     }
     public int getLevel(){ return level; }
+
+    public boolean isActiveMenu() { return is_active_build_menu; }
+    public void setActiveMenu(boolean activeMenu) { is_active_build_menu = activeMenu; }
 
     //Interface to movable
     public TextureRegion getBulletTexture(){ return movable_model.getBulletTexture(); }

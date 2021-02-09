@@ -5,7 +5,8 @@ import com.mygdx.tower_defence.MainTowerDefence;
 import com.mygdx.tower_defence.bullet.view.BulletView;
 import com.mygdx.tower_defence.map.model.MapModel;
 import com.mygdx.tower_defence.screens.AbstractScreen;
-import com.mygdx.tower_defence.tower.controllers.TowerController;
+import com.mygdx.tower_defence.tower.controllers.AbstractTowerController;
+import com.mygdx.tower_defence.tower.views.BuildView;
 import com.mygdx.tower_defence.tower.views.TowerView2;
 
 
@@ -15,7 +16,7 @@ public class MapView extends AbstractScreen {
 
     private BulletView a;
     private TowerView2 b;
-    private TestingActor c;
+    private BuildView c;
 
     public MapView(MainTowerDefence game, MapModel map_model) {
         super(game);
@@ -28,19 +29,27 @@ public class MapView extends AbstractScreen {
 //        a = new BulletView();
 //        stage.addActor(a);
 //
-        b = new TowerView2();
-        stage.addActor(b);
+//        b = new TowerView2();
+//        stage.addActor(b);
 //
-//        c = new TestingActor();
+//
+//        c = new BuildView();
 //        stage.addActor(c);
 
+        addBuildMenu();
     }
 
-    private void addTowersToStage() {
-        for(TowerController tower : map_model.getTowers()){
-            stage.addActor(tower.getView());
+    private void addBuildMenu() {
+        for(AbstractTowerController build : map_model.getBuildControllers()){
+            stage.addActor(build.getView());
         }
     }
+
+//    private void addTowersToStage() {
+//        for(TowerController tower : map_model.getTowers()){
+//            stage.addActor(tower.getView());
+//        }
+//    }
 
     @Override
     public void render(float delta) {

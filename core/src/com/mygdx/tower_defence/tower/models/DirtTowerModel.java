@@ -3,7 +3,7 @@ package com.mygdx.tower_defence.tower.models;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.mygdx.tower_defence.tower.models.movable.DirtMovablePartModel;
 import com.mygdx.tower_defence.tower.textures.TowerTexturesCache;
-import com.mygdx.tower_defence.tower.textures.TowerTexturesType;
+import com.mygdx.tower_defence.tower.textures.TowerType;
 
 public class DirtTowerModel extends TowerModelAbstract{
 
@@ -19,7 +19,7 @@ public class DirtTowerModel extends TowerModelAbstract{
 
     @Override
     public TextureRegion getPillarTexture(){
-        return TowerTexturesCache.getTowerTextures(TowerTexturesType.DIRT)
+        return TowerTexturesCache.getTowerTextures(TowerType.DIRT)
                 .getPillar(level); }
 
 
@@ -28,7 +28,7 @@ public class DirtTowerModel extends TowerModelAbstract{
 
     @Override
     public TextureRegion getBuildMenu(){
-        return TowerTexturesCache.getTowerTextures(TowerTexturesType.DIRT)
+        return TowerTexturesCache.getTowerTextures(TowerType.DIRT)
                 .getBuildMenu(level);
     }
 

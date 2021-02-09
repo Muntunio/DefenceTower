@@ -2,7 +2,7 @@ package com.mygdx.tower_defence.tower.models.movable;
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.mygdx.tower_defence.tower.textures.TowerTexturesCache;
-import com.mygdx.tower_defence.tower.textures.TowerTexturesType;
+import com.mygdx.tower_defence.tower.textures.TowerType;
 
 public class FireMovablePartModel extends  MovablePartModel{
 
@@ -50,16 +50,16 @@ public class FireMovablePartModel extends  MovablePartModel{
 
     @Override
     public TextureRegion getBackTexture(){
-        return TowerTexturesCache.getTowerTextures(TowerTexturesType.FIRE).getBack(level);
+        return TowerTexturesCache.getTowerTextures(TowerType.FIRE).getBack(level);
     }
 
     @Override
     public TextureRegion getFrontTexture(){
-        return TowerTexturesCache.getTowerTextures(TowerTexturesType.FIRE).getFront(level);
+        return TowerTexturesCache.getTowerTextures(TowerType.FIRE).getFront(level);
     }
 
     @Override
     public TextureRegion getBulletTexture(){
-        return TowerTexturesCache.getTowerTextures(TowerTexturesType.FIRE).getBullet();
+        return TowerTexturesCache.getTowerTextures(TowerType.FIRE).getBullet();
     }
 }

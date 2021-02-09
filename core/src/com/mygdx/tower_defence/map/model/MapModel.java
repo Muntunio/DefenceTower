@@ -7,8 +7,12 @@ import com.mygdx.tower_defence.enemy.models.GreenMobModel;
 import com.mygdx.tower_defence.enemy.models.MeshMobModel;
 import com.mygdx.tower_defence.enemy.models.RedMobModel;
 import com.mygdx.tower_defence.enemy.views.MobView;
-import com.mygdx.tower_defence.tower.controllers.TowerController;
-import com.mygdx.tower_defence.tower.models.TowerModel;
+import com.mygdx.tower_defence.tower.controllers.AbstractTowerController;
+import com.mygdx.tower_defence.tower.controllers.BuildController;
+import com.mygdx.tower_defence.tower.controllers.TowerController2;
+import com.mygdx.tower_defence.tower.models.BuildModel;
+import com.mygdx.tower_defence.tower.textures.TowerType;
+
 
 import java.awt.*;
 import java.util.LinkedList;
@@ -35,9 +39,13 @@ public class MapModel {
     private final ReadFileMapSetting map_settings;
 
     //Towers
-    private TowerController[] towers;
-    private boolean is_active_tower;
-    private int tower_with_active_menu;
+    private AbstractTowerController[] build_controller;
+    private boolean active_controller;
+    private int number_of_active_controller;
+
+    //BuildMenu
+
+
 
 
     public MapModel(String map_name) {
@@ -48,8 +56,9 @@ public class MapModel {
 
         init();
         letGoMobWave();
-        initTowers();
-        is_active_tower = false;
+ //       initTowers();
+        initBuildMenu();
+        active_controller = false;
     }
 
 
@@ -64,14 +73,39 @@ public class MapModel {
         enemyList = new LinkedList<>();
     }
 
-    private void initTowers() {
-        towers = new TowerController[map_settings.getTowerPivot().length];
+//    private void initTowers() {
+//        towers = new TowerController[map_settings.getTowerPivot().length];
+//
+//        for(int i=0; i<map_settings.getTowerPivot().length; ++i) {
+//            towers[i] = new TowerController(new TowerModel(assets));
+//            towers[i].setPivot(map_settings.getTowerPivot()[i].x,
+//                    map_settings.getTowerPivot()[i].y);
+//        }
+//    }
+
+    private void initBuildMenu() {
+        BuildModel.loadTexture();
+
+        build_controller = new AbstractTowerController[map_settings.getTowerPivot().length];
 
         for(int i=0; i<map_settings.getTowerPivot().length; ++i) {
-            towers[i] = new TowerController(new TowerModel(assets));
-            towers[i].setPivot(map_settings.getTowerPivot()[i].x,
+            build_controller[i] = new BuildController();
+            build_controller[i].setPivot(map_settings.getTowerPivot()[i].x,
                     map_settings.getTowerPivot()[i].y);
         }
+
+        build_controller[1] = new TowerController2(TowerType.DIRT);
+        build_controller[1].setPivot(map_settings.getTowerPivot()[1].x,
+                map_settings.getTowerPivot()[1].y);
+        build_controller[2] = new TowerController2(TowerType.FIRE);
+        build_controller[2].setPivot(map_settings.getTowerPivot()[2].x,
+                map_settings.getTowerPivot()[2].y);
+        build_controller[3] = new TowerController2(TowerType.STONE);
+        build_controller[3].setPivot(map_settings.getTowerPivot()[3].x,
+                map_settings.getTowerPivot()[3].y);
+        build_controller[4] = new TowerController2(TowerType.IRON);
+        build_controller[4].setPivot(map_settings.getTowerPivot()[4].x,
+                map_settings.getTowerPivot()[4].y);
     }
 
     private void addEnemy(EnemyType type){
@@ -151,13 +185,14 @@ public class MapModel {
 
     public void resetEnemyToStageFlag() { is_enemy_to_stage = false; }
 
-    public TowerController[] getTowers() {return towers;}
 
-    public boolean isIsActiveTower() { return is_active_tower; }
+    public AbstractTowerController[] getBuildControllers() { return build_controller; }
 
-    public int getTowerWidthActiveMenu() { return tower_with_active_menu; }
+    public boolean isIsActiveTower() { return active_controller; }
 
-    public void setIsActiveTower(boolean is_active_tower) { this.is_active_tower = is_active_tower; }
+    public int getTowerWidthActiveMenu() { return number_of_active_controller; }
 
-    public void setTowerWithActiveMenu(int tower_with_active_menu) { this.tower_with_active_menu = tower_with_active_menu; }
+    public void setIsActiveTower(boolean is_active_tower) { this.active_controller = is_active_tower; }
+
+    public void setTowerWithActiveMenu(int tower_with_active_menu) { this.number_of_active_controller = tower_with_active_menu; }
 }

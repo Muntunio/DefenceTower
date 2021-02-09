@@ -6,7 +6,7 @@ import com.mygdx.tower_defence.tower.textures.type.IronTowerTextures;
 import com.mygdx.tower_defence.tower.textures.type.StoneTowerTextures;
 
 public class TowerTexturesFactory {
-    public static TowerTextures createTowerTextures(TowerTexturesType type){
+    public static TowerTextures createTowerTextures(TowerType type){
         switch (type){
             case STONE:
                 return new StoneTowerTextures();

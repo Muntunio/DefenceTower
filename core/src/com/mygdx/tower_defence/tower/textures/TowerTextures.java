@@ -39,7 +39,7 @@ public abstract class TowerTextures {
 
     public TextureRegion getBack(int level) { return back[level]; }
 
-    public TextureRegion getBuildMenu(int level) { return back[level]; }
+    public TextureRegion getBuildMenu(int level) { return build[level]; }
 
     public TextureRegion getBullet() { return bullet; }
 

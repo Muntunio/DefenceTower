@@ -41,7 +41,7 @@ public class MapController {
         if(map_model.isIsActiveTower()){
             Point active_pivot = map_model.getTowerPivot()[map_model.getTowerWidthActiveMenu()];
             if(Math.pow((x - active_pivot.x),2)+Math.pow((y - active_pivot.y),2) < Math.pow(85,2)){
-                map_model.getTowers()[map_model.getTowerWidthActiveMenu()].checkMenuTouchDown(x,y);
+                map_model.getBuildControllers()[map_model.getTowerWidthActiveMenu()].checkMenuTouchDown(x,y);
             }
         }
 
@@ -52,7 +52,7 @@ public class MapController {
                 if(map_model.isIsActiveTower())
                     resetActiveBuildMenu();
 
-                map_model.getTowers()[i].setActive();
+                map_model.getBuildControllers()[i].setIsActiveBuildMenu(true);
                 map_model.setTowerWithActiveMenu(i);
                 map_model.setIsActiveTower(true);
                 return;
@@ -64,7 +64,7 @@ public class MapController {
 
     private void resetActiveBuildMenu(){
         map_model.setIsActiveTower(false);
-        map_model.getTowers()[map_model.getTowerWidthActiveMenu()].resetActive();
+        map_model.getBuildControllers()[map_model.getTowerWidthActiveMenu()].setIsActiveBuildMenu(false);
     }
 
 

@@ -1,6 +1,6 @@
 package com.mygdx.tower_defence.tower.textures;
 
-public enum TowerTexturesType {
+public enum TowerType {
     FIRE,
     DIRT,
     STONE,

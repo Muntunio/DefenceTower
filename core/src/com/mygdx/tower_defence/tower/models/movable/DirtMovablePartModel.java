@@ -2,7 +2,7 @@ package com.mygdx.tower_defence.tower.models.movable;
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.mygdx.tower_defence.tower.textures.TowerTexturesCache;
-import com.mygdx.tower_defence.tower.textures.TowerTexturesType;
+import com.mygdx.tower_defence.tower.textures.TowerType;
 
 public class DirtMovablePartModel extends MovablePartModel {
 
@@ -45,17 +45,17 @@ public class DirtMovablePartModel extends MovablePartModel {
 
     @Override
     public TextureRegion getBackTexture(){
-        return TowerTexturesCache.getTowerTextures(TowerTexturesType.DIRT).getBack(level);
+        return TowerTexturesCache.getTowerTextures(TowerType.DIRT).getBack(level);
     }
 
     @Override
     public TextureRegion getFrontTexture(){
-        return TowerTexturesCache.getTowerTextures(TowerTexturesType.DIRT).getFront(level);
+        return TowerTexturesCache.getTowerTextures(TowerType.DIRT).getFront(level);
     }
 
     @Override
     public TextureRegion getBulletTexture(){
-        return TowerTexturesCache.getTowerTextures(TowerTexturesType.DIRT).getBullet();
+        return TowerTexturesCache.getTowerTextures(TowerType.DIRT).getBullet();
     }
 
 }

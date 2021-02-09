@@ -45,4 +45,5 @@ public class TowerController {
     public void resetActive(){model.resetActiveBuildMenu();}
 
     public TowerView getView() { return view; }
+
 }
