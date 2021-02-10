@@ -171,14 +171,16 @@ public class MapModel {
         for(AbstractTowerController tower : build_controller){
             if( tower.getTowerType() != TowerType.BUILD){
                 TowerController2 tower2 = (TowerController2)tower;
-                int range = tower2.getModel().getRange();
-                AbstractEnemyModel mob = enemyList.get(0).getModel();
+                if(!tower2.getModel().isHaveTarget()) {
+                    int range = tower2.getModel().getRange();
+                    AbstractEnemyModel mob = enemyList.get(0).getModel();
 
-                if( Math.pow(tower2.getModel().getXPositionPillar()-mob.getPosX(),2) +
-                        Math.pow(tower2.getModel().getYPositionPillar()-mob.getPosY(),2) < Math.pow(range,2) ){
+                    if (Math.pow(tower2.getModel().getXPositionPillar() - mob.getPosX(), 2) +
+                            Math.pow(tower2.getModel().getYPositionPillar() - mob.getPosY(), 2) < Math.pow(range, 2)) {
 
-                    tower2.getModel().isEnemyInRange(mob);
-                    System.out.println("JEST");
+                        tower2.getModel().isEnemyInRange(mob);
+                        System.out.println("JEST");
+                    }
                 }
             }
         }

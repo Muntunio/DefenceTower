@@ -21,9 +21,7 @@ public class MobView extends Actor {
                 model.getWidthHealth(),model.getHeightHealth());
         batch.draw(model.getCurrent_frame(), model.getPosX(), model.getPosY(),
                 model.getWidth(), model.getHeight());
-
-
-
+        
     }
 
     @Override

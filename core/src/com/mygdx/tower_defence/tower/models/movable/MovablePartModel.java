@@ -26,9 +26,11 @@ public abstract class MovablePartModel {
     protected int x_position_bullet;
     protected int y_position_bullet;
 
+    //animation
     protected float delay;
-    private float last_state;
-    private boolean is_waiting;
+    protected float last_state;
+    protected boolean is_waiting;
+    protected boolean active;
 
 
 
@@ -40,6 +42,7 @@ public abstract class MovablePartModel {
         delay = 3.0f;
         last_state = 0.0f;
         is_waiting = false;
+        active = false;
     }
 
     public MovablePartModel(int x_position, int y_position) {
@@ -144,5 +147,7 @@ public abstract class MovablePartModel {
 
     public int getYPositionBullet() { return y_position_bullet; }
 
+    public boolean isActive() { return active; }
 
+    public void setActive(boolean active) { this.active = active; }
 }

@@ -73,6 +73,13 @@ public abstract class TowerModelAbstract {
         movable_model.setLevel(level);
     }
 
+    public void update(float delta){
+
+        movable_model.update(delta);
+        if(haveTarget)
+            isTargetStillInRange();
+    }
+
     //Interface
     public abstract TextureRegion getPillarTexture();
     public abstract TextureRegion getBuildMenu();
@@ -80,23 +87,14 @@ public abstract class TowerModelAbstract {
     public int getYPositionPillar(){ return  y_position; }
     public int getXPositionBuildMenu() { return x_position_build_menu; }
     public int getYPositionBuildMenu() { return y_position_build_menu; }
-    public void update(float delta){
-
-        movable_model.update(delta);
-        isTargetStillInRange();
-    }
-
     public int getLevel(){ return level; }
-
     public boolean isActiveMenu() { return is_active_build_menu; }
     public void setActiveMenu(boolean activeMenu) { is_active_build_menu = activeMenu; }
-
     public abstract TowerType getType();
-
     public void setToRemove(boolean to_remove) { this.to_remove = to_remove; }
     public boolean isToRemove() { return to_remove; }
-
     public int getRange() { return range; }
+    public boolean isHaveTarget() { return haveTarget; }
 
     //Interface to movable
     public TextureRegion getBulletTexture(){ return movable_model.getBulletTexture(); }
@@ -113,12 +111,14 @@ public abstract class TowerModelAbstract {
     public void isEnemyInRange(AbstractEnemyModel mob) {
         haveTarget = true;
         target_model = mob;
+        movable_model.setActive(true);
     }
 
     private void isTargetStillInRange() {
         if (Math.pow(getXPositionPillar() - target_model.getPosX(), 2) +
                 Math.pow(getYPositionPillar() - target_model.getPosY(), 2) > Math.pow(range, 2)) {
             haveTarget = false;
+            movable_model.setActive(false);
         }
     }
 
