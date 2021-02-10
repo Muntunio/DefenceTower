@@ -50,7 +50,7 @@ public class BuildController extends AbstractTowerController {
 
     private void createTower(TowerType type) {
         model.setToRemove(true);
-        map_model.addNewTower( new TowerController2(map_model, type) );
+        map_model.addNewTower( new TowerController(map_model, type) );
     }
 
     @Override

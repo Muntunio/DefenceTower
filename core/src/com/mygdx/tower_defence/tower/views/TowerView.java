@@ -2,38 +2,45 @@ package com.mygdx.tower_defence.tower.views;
 
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
-import com.mygdx.tower_defence.tower.models.TowerModel;
-
-
-
+import com.mygdx.tower_defence.tower.models.*;
+import com.mygdx.tower_defence.tower.textures.TowerType;
 
 public class TowerView extends Actor {
+    TowerModelAbstract model;
 
-    private TowerModel model;
+    public TowerView(TowerModelAbstract model) {
+        this.model = model;
+    }
 
-    public TowerView(TowerModel model) { this.model = model; }
 
     @Override
     public void draw(Batch batch, float parentAlpha) {
         super.draw(batch, parentAlpha);
-        if(model.isBuilt()) {
-            batch.draw(model.getBack(), model.getPosXBack(), model.getPosYBack());
-            batch.draw(model.getPillar(), model.getPosXPillar(), model.getPosYPillar());
-            batch.draw(model.getFront(), model.getPosXFront(), model.getPosYFront());
-        }
-        if(model.isActiveBuildMenu())
-            batch.draw(model.getBuildMenu(),model.getPosXBuildMenu(),model.getPosYBuildMenu());
 
+        batch.draw(model.getBackTexture(), model.getXPositionBack(), model.getYPositionBack());
+
+        if(model.getType() != TowerType.STONE) {
+            batch.draw(model.getPillarTexture(), model.getXPositionPillar(), model.getYPositionPillar());
+            batch.draw(model.getFrontTexture(), model.getXPositionFront(), model.getYPositionFront());
+        }else{
+            batch.draw(model.getFrontTexture(), model.getXPositionFront(), model.getYPositionFront());
+            batch.draw(model.getPillarTexture(), model.getXPositionPillar(), model.getYPositionPillar());
+        }
+
+        if( model.isBullet() )
+            batch.draw(model.getBulletTexture(), model.getXPositionBullet(), model.getYPositionBullet());
+
+        if( model.isActiveMenu() )
+            batch.draw(model.getBuildMenu(), model.getXPositionBuildMenu(), model.getYPositionBuildMenu());
     }
 
     @Override
     public void act(float delta) {
         super.act(delta);
-        update(delta);
-    }
+        model.update(delta);
 
-    private void update(float delta) {
-        model.animationTowerFire(delta);
+        if(model.isToRemove())
+            this.remove();
     }
 
 

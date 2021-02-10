@@ -9,7 +9,7 @@ import com.mygdx.tower_defence.enemy.models.RedMobModel;
 import com.mygdx.tower_defence.enemy.views.MobView;
 import com.mygdx.tower_defence.tower.controllers.AbstractTowerController;
 import com.mygdx.tower_defence.tower.controllers.BuildController;
-import com.mygdx.tower_defence.tower.controllers.TowerController2;
+import com.mygdx.tower_defence.tower.controllers.TowerController;
 import com.mygdx.tower_defence.tower.models.BuildModel;
 import com.mygdx.tower_defence.tower.models.TowerModelAbstract;
 import com.mygdx.tower_defence.tower.textures.TowerType;
@@ -172,7 +172,7 @@ public class MapModel {
     public void checkFire() {
         for(AbstractTowerController tower : build_controller){
             if( tower.getTowerType() != TowerType.BUILD ){
-                TowerController2 tower2 = (TowerController2)tower;
+                TowerController tower2 = (TowerController)tower;
                 if(tower2.getModel().isFire()){
                     addFireAnimation(tower2.getModel());
                     tower2.getModel().setFire(false);
@@ -188,7 +188,7 @@ public class MapModel {
     private void enemyIsInTowerRange() {
         for(AbstractTowerController tower : build_controller){
             if( tower.getTowerType() != TowerType.BUILD){
-                TowerController2 tower2 = (TowerController2)tower;
+                TowerController tower2 = (TowerController)tower;
                 if(!tower2.getModel().isHaveTarget()) {
                     int range = tower2.getModel().getRange();
 
