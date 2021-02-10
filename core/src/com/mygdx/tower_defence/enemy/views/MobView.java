@@ -3,6 +3,7 @@ package com.mygdx.tower_defence.enemy.views;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.mygdx.tower_defence.enemy.models.AbstractEnemyModel;
+import com.mygdx.tower_defence.tower.controllers.AbstractTowerController;
 
 public class MobView extends Actor {
 
@@ -30,4 +31,7 @@ public class MobView extends Actor {
         super.act(delta);
         model.updateStateTime(delta);
     }
+
+    //TODO not here
+    public AbstractEnemyModel getModel(){ return model;}
 }

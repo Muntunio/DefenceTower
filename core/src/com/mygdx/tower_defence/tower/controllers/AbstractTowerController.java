@@ -2,8 +2,8 @@ package com.mygdx.tower_defence.tower.controllers;
 
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.mygdx.tower_defence.map.model.MapModel;
+import com.mygdx.tower_defence.tower.textures.TowerType;
 
-import javax.activity.ActivityRequiredException;
 
 public abstract class AbstractTowerController {
     protected MapModel map_model;
@@ -19,4 +19,6 @@ public abstract class AbstractTowerController {
     public abstract void checkMenuTouchDown(float x, float y);
 
     public abstract void setIsActiveBuildMenu(boolean is_active_build_menu);
+
+    public abstract TowerType getTowerType();
 }

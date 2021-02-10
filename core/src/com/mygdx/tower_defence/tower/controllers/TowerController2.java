@@ -41,6 +41,10 @@ public class TowerController2 extends AbstractTowerController {
     }
 
     @Override
+    public TowerType getTowerType() { return model.getType(); }
+
+
+    @Override
     public void checkMenuTouchDown(float x, float y) {
         if(x>model.getXPositionBuildMenu()+5 && x<model.getXPositionBuildMenu()+50){
             if(y>model.getYPositionBuildMenu()+10 && y<model.getYPositionBuildMenu()+44){

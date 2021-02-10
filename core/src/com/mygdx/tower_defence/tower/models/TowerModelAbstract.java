@@ -1,6 +1,7 @@
 package com.mygdx.tower_defence.tower.models;
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.mygdx.tower_defence.enemy.models.AbstractEnemyModel;
 import com.mygdx.tower_defence.tower.models.movable.MovablePartModel;
 import com.mygdx.tower_defence.tower.textures.TowerType;
 
@@ -18,11 +19,17 @@ public abstract class TowerModelAbstract {
 
     private boolean to_remove;
 
+    //For enemy hit
+    private int range;
+    private boolean haveTarget;
+    private AbstractEnemyModel target_model;
+
     public TowerModelAbstract() {
         is_active_build_menu = false;
         setModel();
         level = 0;
         movable_model.setLevel(level);
+        range = 300;
     }
 
     protected abstract void setModel();
@@ -74,8 +81,11 @@ public abstract class TowerModelAbstract {
     public int getXPositionBuildMenu() { return x_position_build_menu; }
     public int getYPositionBuildMenu() { return y_position_build_menu; }
     public void update(float delta){
+
         movable_model.update(delta);
+        isTargetStillInRange();
     }
+
     public int getLevel(){ return level; }
 
     public boolean isActiveMenu() { return is_active_build_menu; }
@@ -85,6 +95,8 @@ public abstract class TowerModelAbstract {
 
     public void setToRemove(boolean to_remove) { this.to_remove = to_remove; }
     public boolean isToRemove() { return to_remove; }
+
+    public int getRange() { return range; }
 
     //Interface to movable
     public TextureRegion getBulletTexture(){ return movable_model.getBulletTexture(); }
@@ -97,5 +109,17 @@ public abstract class TowerModelAbstract {
     public int getXPositionBullet() { return movable_model.getXPositionBullet(); }
     public int getYPositionBullet() { return movable_model.getYPositionBullet(); }
     public boolean isBullet() { return movable_model.isBullet(); }
+
+    public void isEnemyInRange(AbstractEnemyModel mob) {
+        haveTarget = true;
+        target_model = mob;
+    }
+
+    private void isTargetStillInRange() {
+        if (Math.pow(getXPositionPillar() - target_model.getPosX(), 2) +
+                Math.pow(getYPositionPillar() - target_model.getPosY(), 2) > Math.pow(range, 2)) {
+            haveTarget = false;
+        }
+    }
 
 }

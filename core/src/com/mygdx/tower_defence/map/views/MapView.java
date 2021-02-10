@@ -29,7 +29,7 @@ public class MapView extends AbstractScreen {
     @Override
     public void render(float delta) {
         super.render(delta);
-        updateStage();
+        updateStage(delta);
 
         spriteBatch.begin();
         stage.draw();
@@ -37,7 +37,7 @@ public class MapView extends AbstractScreen {
 
     }
 
-    private void updateStage() {
+    private void updateStage(float delta) {
         stage.act();
 
         //Check is some enemy to add
@@ -50,6 +50,8 @@ public class MapView extends AbstractScreen {
 
             map_model.resetIsTowerToAdd();
         }
+
+        map_model.checkEnemy(delta);
 
     }
 

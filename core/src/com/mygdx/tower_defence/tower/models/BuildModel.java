@@ -3,6 +3,7 @@ package com.mygdx.tower_defence.tower.models;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.mygdx.tower_defence.tower.textures.TowerType;
 
 public class BuildModel {
     static TextureRegion menu;
@@ -19,10 +20,13 @@ public class BuildModel {
     private int y_position;
     private boolean is_active_build_menu;
     private boolean to_remove;
+    private TowerType type;
+
 
     public BuildModel() {
         is_active_build_menu = false;
         to_remove = false;
+        type = TowerType.BUILD;
     }
 
     public void setPivot(int x, int y){
@@ -47,4 +51,6 @@ public class BuildModel {
     public void setToRemove(boolean to_remove) { this.to_remove = to_remove; }
 
     public boolean isToRemove() { return to_remove; }
+
+    public TowerType getType() { return type; }
 }

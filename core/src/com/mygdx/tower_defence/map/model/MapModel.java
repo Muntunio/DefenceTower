@@ -58,8 +58,7 @@ public class MapModel {
 
         init();
         letGoMobWave();
- //       initTowers();
-        initBuildMenu();
+        initBuildController();
         active_controller = false;
         is_tower_to_add = false;
     }
@@ -77,7 +76,7 @@ public class MapModel {
     }
 
 
-    private void initBuildMenu() {
+    private void initBuildController() {
         BuildModel.loadTexture();
 
         build_controller = new AbstractTowerController[map_settings.getTowerPivot().length];
@@ -164,6 +163,26 @@ public class MapModel {
     }
 
 
+    public void checkEnemy(float delta) {
+        enemyIsInTowerRange();
+    }
+
+    private void enemyIsInTowerRange() {
+        for(AbstractTowerController tower : build_controller){
+            if( tower.getTowerType() != TowerType.BUILD){
+                TowerController2 tower2 = (TowerController2)tower;
+                int range = tower2.getModel().getRange();
+                AbstractEnemyModel mob = enemyList.get(0).getModel();
+
+                if( Math.pow(tower2.getModel().getXPositionPillar()-mob.getPosX(),2) +
+                        Math.pow(tower2.getModel().getYPositionPillar()-mob.getPosY(),2) < Math.pow(range,2) ){
+
+                    tower2.getModel().isEnemyInRange(mob);
+                    System.out.println("JEST");
+                }
+            }
+        }
+    }
 
 
     //Getters and Setters
@@ -194,4 +213,6 @@ public class MapModel {
     public boolean isIsTowerToAdd() { return is_tower_to_add; }
 
     public void resetIsTowerToAdd() { this.is_tower_to_add = false; }
+
+
 }
