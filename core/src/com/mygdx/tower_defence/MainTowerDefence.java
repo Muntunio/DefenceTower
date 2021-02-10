@@ -19,8 +19,6 @@ public class MainTowerDefence extends Game {
 
 	@Override
 	public void create () {
-		//splash_screen = new SplashScreen(this);
-		//setScreen(splash_screen);
 		game_controller = new GameController(this);
 	}
 

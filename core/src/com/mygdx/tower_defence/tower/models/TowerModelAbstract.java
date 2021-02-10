@@ -29,7 +29,7 @@ public abstract class TowerModelAbstract {
         setModel();
         level = 0;
         movable_model.setLevel(level);
-        range = 300;
+        range = 150;
     }
 
     protected abstract void setModel();
@@ -107,6 +107,9 @@ public abstract class TowerModelAbstract {
     public int getXPositionBullet() { return movable_model.getXPositionBullet(); }
     public int getYPositionBullet() { return movable_model.getYPositionBullet(); }
     public boolean isBullet() { return movable_model.isBullet(); }
+    public boolean isFire() { return movable_model.isFire(); }
+    public void setFire(boolean fire){ movable_model.setFire(fire); }
+
 
     public void isEnemyInRange(AbstractEnemyModel mob) {
         haveTarget = true;

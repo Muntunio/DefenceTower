@@ -11,6 +11,7 @@ import com.mygdx.tower_defence.tower.controllers.AbstractTowerController;
 import com.mygdx.tower_defence.tower.controllers.BuildController;
 import com.mygdx.tower_defence.tower.controllers.TowerController2;
 import com.mygdx.tower_defence.tower.models.BuildModel;
+import com.mygdx.tower_defence.tower.models.TowerModelAbstract;
 import com.mygdx.tower_defence.tower.textures.TowerType;
 
 
@@ -85,6 +86,7 @@ public class MapModel {
             build_controller[i] = new BuildController(this);
             build_controller[i].setPivot(map_settings.getTowerPivot()[i].x,
                     map_settings.getTowerPivot()[i].y);
+
         }
     }
 
@@ -163,8 +165,24 @@ public class MapModel {
     }
 
 
-    public void checkEnemy(float delta) {
+    public void checkEnemy() {
         enemyIsInTowerRange();
+    }
+
+    public void checkFire() {
+        for(AbstractTowerController tower : build_controller){
+            if( tower.getTowerType() != TowerType.BUILD ){
+                TowerController2 tower2 = (TowerController2)tower;
+                if(tower2.getModel().isFire()){
+                    addFireAnimation(tower2.getModel());
+                    tower2.getModel().setFire(false);
+                }
+            }
+        }
+    }
+
+    private void addFireAnimation(TowerModelAbstract model) {
+
     }
 
     private void enemyIsInTowerRange() {
@@ -173,13 +191,15 @@ public class MapModel {
                 TowerController2 tower2 = (TowerController2)tower;
                 if(!tower2.getModel().isHaveTarget()) {
                     int range = tower2.getModel().getRange();
-                    AbstractEnemyModel mob = enemyList.get(0).getModel();
 
-                    if (Math.pow(tower2.getModel().getXPositionPillar() - mob.getPosX(), 2) +
-                            Math.pow(tower2.getModel().getYPositionPillar() - mob.getPosY(), 2) < Math.pow(range, 2)) {
+                    for (MobView mob_view : enemyList){
+                        AbstractEnemyModel mob = mob_view.getModel();
+                        if (Math.pow(tower2.getModel().getXPositionPillar() - mob.getPosX(), 2) +
+                                Math.pow(tower2.getModel().getYPositionPillar() - mob.getPosY(), 2) < Math.pow(range, 2)) {
 
-                        tower2.getModel().isEnemyInRange(mob);
-                        System.out.println("JEST");
+                            tower2.getModel().isEnemyInRange(mob);
+                            return;
+                        }
                     }
                 }
             }
@@ -215,6 +235,7 @@ public class MapModel {
     public boolean isIsTowerToAdd() { return is_tower_to_add; }
 
     public void resetIsTowerToAdd() { this.is_tower_to_add = false; }
+
 
 
 }

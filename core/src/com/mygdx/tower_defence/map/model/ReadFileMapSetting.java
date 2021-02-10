@@ -90,6 +90,8 @@ public class ReadFileMapSetting {
             case "MESH":
                 enemy_wave_queue.add(new EnemyWave(EnemyType.MESH,count_mob,delay_mob,delay_wave));
                 break;
+            default:
+                throw new IllegalArgumentException("Unknown enemy type in file "+values[0]);
 
         }
     }

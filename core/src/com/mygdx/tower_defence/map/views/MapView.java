@@ -2,6 +2,8 @@ package com.mygdx.tower_defence.map.views;
 
 
 import com.mygdx.tower_defence.MainTowerDefence;
+import com.mygdx.tower_defence.bullet.animation.BulletAnimationType;
+import com.mygdx.tower_defence.bullet.view.BulletView;
 import com.mygdx.tower_defence.map.model.MapModel;
 import com.mygdx.tower_defence.screens.AbstractScreen;
 import com.mygdx.tower_defence.tower.controllers.AbstractTowerController;
@@ -18,6 +20,7 @@ public class MapView extends AbstractScreen {
 
         stage.addActor(map_model.getMapImage());
         addTowerControllers();
+
     }
 
     private void addTowerControllers() {
@@ -51,7 +54,8 @@ public class MapView extends AbstractScreen {
             map_model.resetIsTowerToAdd();
         }
 
-        map_model.checkEnemy(delta);
+        map_model.checkEnemy();
+        map_model.checkFire();
 
     }
 

@@ -30,6 +30,7 @@ public abstract class MovablePartModel {
     protected float last_state;
     protected boolean is_waiting;
     protected boolean active;
+    protected boolean fire;
 
 
 
@@ -84,6 +85,7 @@ public abstract class MovablePartModel {
             moveUp();
             if(y_position_back > y_position + moving_distance){
                 directionUp = false;
+                fire = true;
             }
         }
         else{
@@ -149,4 +151,8 @@ public abstract class MovablePartModel {
     public void setActive(boolean active) { this.active = active; }
 
     public boolean isIsWaiting() { return is_waiting; }
+
+    public boolean isFire() { return fire; }
+
+    public void setFire(boolean fire) { this.fire = fire; }
 }
