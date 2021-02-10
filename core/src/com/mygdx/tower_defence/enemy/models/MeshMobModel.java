@@ -17,7 +17,7 @@ public class MeshMobModel extends AbstractEnemyModel {
     private void initMobStatic() {
         this.max_hp = 100;
         this.hp = max_hp;
-        this.speed = 0.5f;
+        this.speed = 0.8f;
         setScale(0.35f);
     }
 

@@ -17,13 +17,13 @@ public class FireMovablePartModel extends  MovablePartModel{
     }
 
     private void initType() {
-        moving_distance = 50;
+        moving_distance = 60;
     }
 
     @Override
     public void setPosition(int x, int y){
         this.x_position = x-1;
-        this.y_position = y+58;
+        this.y_position = y+40;
         recalculatePosition();
     }
 
