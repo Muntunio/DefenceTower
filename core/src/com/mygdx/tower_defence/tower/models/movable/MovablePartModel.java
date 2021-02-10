@@ -66,7 +66,7 @@ public abstract class MovablePartModel {
 
     public void update(float delta) {
         state_time += delta;
-        if(!is_waiting && active){
+        if(!is_waiting){
             move();
         }
         else
@@ -87,12 +87,14 @@ public abstract class MovablePartModel {
             }
         }
         else{
-            moveDown();
-            if(y_position_back < y_position){
-                directionUp = true;
-                is_waiting = true;
-                last_state = state_time;
-            }
+            if(y_position_front < y_position){
+                if(active){
+                    directionUp = true;
+                    is_waiting = true;
+                    last_state = state_time;
+                }
+            }else
+                moveDown();
         }
     }
 

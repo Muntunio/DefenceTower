@@ -8,17 +8,17 @@ public class DirtMovablePartModel extends MovablePartModel {
 
     public DirtMovablePartModel() {
         super();
-        moving_distance = 50;
+        moving_distance = 70;
     }
 
     public DirtMovablePartModel(int x_position, int y_position) {
         super(x_position, y_position);
-        moving_distance = 50;
+        moving_distance = 70;
     }
 
     public void setPosition(int x, int y){
         this.x_position = x+6;
-        this.y_position = y+45;
+        this.y_position = y+25;
         recalculatePosition();
     }
 

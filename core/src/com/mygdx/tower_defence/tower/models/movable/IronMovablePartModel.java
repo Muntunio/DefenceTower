@@ -8,18 +8,18 @@ import com.mygdx.tower_defence.tower.textures.TowerType;
 public class IronMovablePartModel extends MovablePartModel {
     public IronMovablePartModel() {
         super();
-        moving_distance = 55;
+        moving_distance = 75;
     }
 
     public IronMovablePartModel(int x_position, int y_position) {
         super(x_position, y_position);
-        moving_distance = 55;
+        moving_distance = 75;
     }
 
     @Override
     public void setPosition(int x, int y){
-        this.x_position = x+1;
-        this.y_position = y+45;
+        this.x_position = x;
+        this.y_position = y+25;
         recalculatePosition();
     }
 
