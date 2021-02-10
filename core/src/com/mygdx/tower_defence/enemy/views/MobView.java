@@ -3,11 +3,11 @@ package com.mygdx.tower_defence.enemy.views;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.mygdx.tower_defence.enemy.models.AbstractEnemyModel;
-import com.mygdx.tower_defence.tower.controllers.AbstractTowerController;
+
 
 public class MobView extends Actor {
 
-    private AbstractEnemyModel model;
+    private final AbstractEnemyModel model;
 
     public MobView(AbstractEnemyModel model) {
         this.model = model;
@@ -21,7 +21,7 @@ public class MobView extends Actor {
                 model.getWidthHealth(),model.getHeightHealth());
         batch.draw(model.getCurrent_frame(), model.getPosX(), model.getPosY(),
                 model.getWidth(), model.getHeight());
-        
+
     }
 
     @Override

@@ -11,10 +11,7 @@ public abstract class MovablePartModel {
     protected int y_position;
     protected int level;
     protected float state_time;
-    protected int speed;
 
-    protected boolean directionUp;
-    protected boolean moving;
 
     //back
     protected int x_position_back;
@@ -27,6 +24,8 @@ public abstract class MovablePartModel {
     protected int y_position_bullet;
 
     //animation
+    protected int speed;
+    protected boolean directionUp;
     protected float delay;
     protected float last_state;
     protected boolean is_waiting;
@@ -39,10 +38,6 @@ public abstract class MovablePartModel {
         this.y_position = 0;
         setDefault();
         recalculatePosition();
-        delay = 3.0f;
-        last_state = 0.0f;
-        is_waiting = false;
-        active = false;
     }
 
     public MovablePartModel(int x_position, int y_position) {
@@ -50,17 +45,19 @@ public abstract class MovablePartModel {
         this.y_position = y_position;
         setDefault();
         recalculatePosition();
-        delay = 3.0f;
-        last_state = 0.0f;
-        is_waiting = false;
+
     }
 
     private void setDefault() {
-        moving = true;
         level = 0;
         state_time = 0.0f;
         speed = 1;
         directionUp = true;
+
+        delay = 3.0f;
+        last_state = 0.0f;
+        is_waiting = true;
+        active = false;
     }
 
     protected abstract void recalculatePosition();
@@ -69,15 +66,17 @@ public abstract class MovablePartModel {
 
     public void update(float delta) {
         state_time += delta;
-        if(!is_waiting)
+        if(!is_waiting && active){
             move();
+        }
         else
             waiting();
     }
 
     protected void waiting(){
-        if(state_time-last_state > delay)
-            is_waiting =false;
+        if(state_time-last_state > delay) {
+            is_waiting = false;
+        }
     }
 
     private void move() {
@@ -131,10 +130,6 @@ public abstract class MovablePartModel {
 
     public boolean isBullet() { return directionUp; }
 
-    public boolean isMoving() { return moving; }
-
-    public void setMoving(boolean moving) { this.moving = moving; }
-
     public int getXPositionBack() { return x_position_back; }
 
     public int getYPositionBack() { return y_position_back; }
@@ -150,4 +145,6 @@ public abstract class MovablePartModel {
     public boolean isActive() { return active; }
 
     public void setActive(boolean active) { this.active = active; }
+
+    public boolean isIsWaiting() { return is_waiting; }
 }

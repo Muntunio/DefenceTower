@@ -76,7 +76,7 @@ public abstract class TowerModelAbstract {
     public void update(float delta){
 
         movable_model.update(delta);
-        if(haveTarget)
+        if(haveTarget && !movable_model.isIsWaiting())
             isTargetStillInRange();
     }
 
@@ -111,7 +111,6 @@ public abstract class TowerModelAbstract {
     public void isEnemyInRange(AbstractEnemyModel mob) {
         haveTarget = true;
         target_model = mob;
-        movable_model.setActive(true);
     }
 
     private void isTargetStillInRange() {
@@ -119,7 +118,8 @@ public abstract class TowerModelAbstract {
                 Math.pow(getYPositionPillar() - target_model.getPosY(), 2) > Math.pow(range, 2)) {
             haveTarget = false;
             movable_model.setActive(false);
-        }
+        }else
+            movable_model.setActive(true);
     }
 
 }
